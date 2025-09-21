@@ -1,9 +1,7 @@
-console.log("maaz");
-let arr= 12
-if (arr > 18) {
-    console.log("true");
-    
-} else {
-        console.log("false");
+const name = "maaz"
+const repoCount = 50
+console.log(`hello my name is ${name} and my repoCount is ${repoCount}`);
+console.log(name.__proto__);
+console.log(name.length);
+console.log(name.toUpperCase());
 
-}       
