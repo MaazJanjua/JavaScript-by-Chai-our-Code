@@ -22,12 +22,14 @@ function login(username) {
 }
 // console.log(login("Maaz"))
 function login2(username2) {
-    // ! (exclimatery symbol)turns value of true into false and false into true
+    
     // if (username2 === undefined) {
     //     console.log("invalid username");
     //     return
     //    }
     //BOTH ARE SAME BUT THE SECONDONE IS MORE PROFESSIONAL
+     // ! (exclimatery symbol)turns value of true into false and false into true
+      
     if (!username2) {
         console.log("invalid username");
         return
