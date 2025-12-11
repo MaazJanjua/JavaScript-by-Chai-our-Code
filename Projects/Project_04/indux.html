@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
-<body>
-    <h1>PROJECT_04</h1>
+
+<body class="text-white uppercase">
+    <nav>
+        <a href="/Projects/index.html">Home</a>
+        <a href="https://www.youtube.com">Youtube Channel</a>
+    </nav>
+
+    <div id="wrapper">
+        <h1 class=" bg-black p-5 text-center ">Number Guessing Game</h1>
+        <p class="text-center py-4">Try and Guess a Random Number Between 1 And 100.</p>
+        <p class="text-center">You Have 10 Attempt To Guess The Right Number.</p>
+        <br>
+        <form class="form flex flex-col justify-center items-center gap-3 items-center text-center">
+            <label2 for="guessField" id="guess" class=" gap-3 text-4xl flex flex-col justify-center items-center ">Guess a Number</label>
+                <input type="text" id="guessField" class="guessField h-10 bg-gray-500 w-[200px] rounded-xl">
+                <input type="submit" id="subt"  value="Submit guess" class="bg-black guessSubmit text-[14px] h-10 w-[150px] uppercase rounded-xl">
+        </form>
+        <div class="resultParas  ">
+            <p class="text-2xl py-3">Previous Guesses : <span class="guesses"></span></p>
+            <p class="text-3xl">Guesses Remaining : <span class="lastResult">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
 </body>
+
 </html>
