@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Chai Aur JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    //Way one
+    const satDate = function () {
+        console.log("Maaz", Date.now());
+    }
+    // setInterval(satDate, 1000);
+    //Way Two
+    // const satDate1 = function (str) {
+    //     console.log(str, Date.now());
+    // }
+    // const stopInterval = setInterval(satDate1, 1000, "hi");
+    // document.getElementById("stop").addEventListener("click", function () {
+    //     clearInterval(stopInterval);
+    //     console.log("setInterval STOPPED");
+    // })
+    // document.getElementById("start").addEventListener("click", function () {
+    //     setInterval(satDate1, 1000, "hi");
+    //     console.log("setInterval STARTED");
+    // })
+
+
+
+
+    // Ye function har 1 second baad call hoga
+    // "str" wo value hai jo hum setInterval ke through bhejte hain
+    const satDate1 = function (str) {
+        // Console mein string aur current time (milliseconds) print karega
+        console.log(str, Date.now());
+    }
+
+    // Interval ki ID store karne ke liye variable
+    // Shuru mein null hai, matlab koi interval chal nahi raha
+    let intervalId = null;
+
+    // Start button par click event lagaya
+    document.getElementById("start").addEventListener("click", function () {
+
+        // Check: agar interval pehle se start nahi hua
+        if (intervalId === null) {
+
+            // setInterval start kar rahe hain
+            // Har 1000ms (1 second) baad satDate1("hi") chalega
+            // Jo interval ID milegi, usko intervalId mein store kar liya
+            intervalId = setInterval(satDate1, 1000, "hi");
+
+            // Sirf confirmation ke liye log
+            console.log("setInterval STARTED");
+        }
+        // Agar interval pehle se chal raha ho
+        // to kuch nahi hoga (duplicate interval nahi banega)
+    });
+
+    // Stop button par click event
+    document.getElementById("stop").addEventListener("click", function () {
+
+        // Jo interval intervalId mein store hai, usko stop kar do
+        clearInterval(intervalId);
+
+        // intervalId ko wapas null kar diya
+        // taake dobara Start button kaam kare
+        intervalId = null;
+
+        // Confirmation message
+        console.log("setInterval STOPPED");
+    });
+</script>
+
+</html>

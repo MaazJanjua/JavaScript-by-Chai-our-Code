@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    //Example #1
+    //Way One
+    const sayMaaz = function () {
+        console.log("Maaz");
+
+    }
+    setTimeout(sayMaaz, 2000);
+    //Way Two
+    setTimeout(function () {
+        console.log("Maaz");
+
+    }, 2000);
+    //Example #2 (change h1 text use seTimeout)
+    const changeText = function () {
+        document.querySelector("h1").innerHTML = "Best JS Series"
+    }
+    const stopTimeout = setTimeout(changeText, 2000)
+    document.getElementById("stop").addEventListener("click", function () {
+        clearTimeout(stopTimeout)
+        console.log("STOPPED");
+        
+    })
+</script>
+
+</html>
